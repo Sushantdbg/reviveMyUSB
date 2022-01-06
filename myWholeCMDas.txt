@@ -1,0 +1,82 @@
+C:\Windows\system32>diskpart
+
+Microsoft DiskPart version 10.0.22000.1
+
+Copyright (C) Microsoft Corporation.
+On computer: SUSHANTTUF
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          465 GB  1024 KB        *
+  Disk 1    Online          476 GB  1024 KB        *
+  Disk 2    Online           28 GB  1024 KB
+
+DISKPART> select disk 2
+
+Disk 2 is now the selected disk.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          465 GB  1024 KB        *
+  Disk 1    Online          476 GB  1024 KB        *
+* Disk 2    Online           28 GB  1024 KB
+
+DISKPART> clean
+
+DiskPart has encountered an error: Access is denied.
+See the System Event Log for more information.
+
+DISKPART> clean
+
+DiskPart has encountered an error: Access is denied.
+See the System Event Log for more information.
+
+DISKPART> convert gpt
+
+DiskPart successfully converted the selected disk to GPT format.
+
+DISKPART> clean
+
+DiskPart succeeded in cleaning the disk.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          465 GB  1024 KB        *
+  Disk 1    Online          476 GB  1024 KB        *
+* Disk 2    Online           28 GB    28 GB
+
+DISKPART> create partition primary
+
+DiskPart succeeded in creating the specified partition.
+
+DISKPART> list partition
+
+  Partition ###  Type              Size     Offset
+  -------------  ----------------  -------  -------
+* Partition 1    Primary             28 GB  1024 KB
+
+DISKPART> select partition 1
+
+Partition 1 is now the selected partition.
+
+DISKPART> active
+
+DiskPart marked the current partition as active.
+
+DISKPART> format fs=fat32 quick
+
+  100 percent completed
+
+DiskPart successfully formatted the volume.
+
+DISKPART> exit
+
+Leaving DiskPart...
+
+C:\Windows\system32>
