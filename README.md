@@ -53,18 +53,13 @@ Step 4:
 ```bash
 select disk <disk number of flash drive>
 ```
-
-
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/04.png?raw=true)
-
-
 Step 5:
 ```bash
 list disk
 ```
 
 
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/05.png?raw=true)
+![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/04.png?raw=true)
 
 
 Step 6:
@@ -76,22 +71,17 @@ clean
 ![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/06.png?raw=true)
 
 
+
 Step 7:
 ```bash
 convert gpt
 ```
 
 
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/07.png?raw=true)
-
-
 Step 8:
 ```bash
 clean
 ```
-
-
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/08.png?raw=true)
 
 
 Step 9:
@@ -109,16 +99,10 @@ create partition primary
 ```
 
 
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/10.png?raw=true)
-
-
 Step 11:
 ```bash
 list partition
 ```
-
-
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/11.png?raw=true)
 
 
 Step 12:
@@ -133,10 +117,19 @@ Step 14:
 ```bash
 format fs=fat32 quick
 ```
+
+![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/10.png?raw=true)
+
+
 Step 15:
 ```bash
 exit
 ```
+
+![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/11.png?raw=true)
+
+
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
