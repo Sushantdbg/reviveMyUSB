@@ -33,11 +33,11 @@ When one tries to format it using windows GUI/File Manager error like **"DIRECTO
 
 ## Preface
 
-Please consider the fact that the corresponding screenshot are *just for reference* which may/mayn't reflect the same for your pc for example the disk number of flash drive.
+Please consider the fact that the screenshots corresponding to steps below are *just for reference* which may/mayn't reflect same for your pc for example the disk number of flash drive.
 
-All such factors are addressed as well as will be handled with the corresponding details of steps
+All such factors are addressed on respective steps, as well as will be handled via warnings and explanations.
 
-#### BEFORE GOING AHEAD CONSIDER THE FACT THAT THIS PROJECT/INSTRUCTIONS IS/ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND
+#### BEFORE WE GO AHEAD, PLEASE CONSIDER THE FACT THAT THIS PROJECT/INSTRUCTIONS IS/ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND
 #
 
 ## Instructions starts here
@@ -133,7 +133,7 @@ list partition
 
 Step 12:
 ```bash
-select partition <number according to one's personal flash drive>
+select partition <number according to your personal flash drive>
 ```
 
 
