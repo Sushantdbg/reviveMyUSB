@@ -95,7 +95,7 @@ clean
 
 ![img06](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/06.png?raw=true)
 
-<span style="color:green"><strong>Step 7</strong> and <strong>8</strong> are to be followed when you faced the same error after <strong>clean</strong> command as the screenshots; else <span style="color:yellow">you can skip them</span> to continue from <strong>Step 9</strong></span>
+<span style="color:green"><strong>Step 7</strong> and <strong>8</strong> are only to be followed when you face the same error as seen in the above screenshot, after the <strong>clean</strong> command from <strong>Step 6</strong>; else <span style="color:yellow">you can skip them</span> to continue from <strong>Step 9</strong></span>
 
 
 Step 7 <span style="color:yellow">(Optional)</span>:
@@ -161,6 +161,7 @@ exit
 ![img11](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/11.png?raw=true)
 
 
+### For a clear look at the whole CMD command as per my PC you can see [HERE 🡭](https://github.com/Sushantdbg/reviveMyUSB/blob/main/myWholeCMDas.txt)
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
