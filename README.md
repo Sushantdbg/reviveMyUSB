@@ -1,4 +1,4 @@
-<img src="https://github.com/Sushantdbg/reviveMyUSB/blob/main/Assets/Logo.png?raw=true" alt="reviveMyUSB Logo" style="width:100%"/>
+<img src="./Assets/Logo.png" alt="reviveMyUSB Logo" style="width:100%"/>
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
@@ -10,7 +10,7 @@ There are situations where after using a USB flash drive as a Linux installation
 
 When one tries to format it using windows GUI/File Manager error like **"DIRECTORY DOES NOT EXIST"** or something like below pops up when trying to format it using *Disk Management*... 
 
-![Error image in Disk Management](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/00.png?raw=true)
+![Error image in Disk Management](./screenshots/00.png)
 
 
 ...so this guide/project is all about guiding the steps to make the USB flash drive back to life
@@ -44,7 +44,7 @@ All such factors are addressed on respective steps, as well as will be handled v
 
 Step 1: Start CMD with admin privilege
 
-![Starting with admin privilege](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/01.png?raw=true)
+![Starting with admin privilege](./screenshots/01.png)
 
 
 Step 2:
@@ -53,7 +53,7 @@ diskpart
 ```
 
 
-![img02](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/02.png?raw=true)
+![img02](./screenshots/02.png)
 
 
 Step 3:
@@ -62,7 +62,7 @@ list disk
 ```
 
 
-![img03](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/03.png?raw=true)
+![img03](./screenshots/03.png)
 
 
 Step 4: <span style="color:red">Please make sure that the flash drive is the only one selected and not any system drive</span>
@@ -84,7 +84,7 @@ list disk
 ```
 
 
-![img04](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/04.png?raw=true)
+![img04](./screenshots/04.png)
 
 
 Step 6:
@@ -93,7 +93,7 @@ clean
 ```
 
 
-![img06](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/06.png?raw=true)
+![img06](./screenshots/06.png)
 
 <span style="color:green"><strong>Step 7</strong> and <strong>8</strong> are only to be followed when you face the same error as seen in the above screenshot, after the <strong>clean</strong> command from <strong>Step 6</strong>; else <span style="color:yellow">you can skip them</span> to continue from <strong>Step 9</strong></span>
 
@@ -116,7 +116,7 @@ list disk
 ```
 
 
-![img09](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/09.png?raw=true)
+![img09](./screenshots/09.png)
 
 
 Step 10:
@@ -149,7 +149,7 @@ format fs=fat32 quick
 ```
 
 
-![img10](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/10.png?raw=true)
+![img10](./screenshots/10.png)
 
 
 Step 15:
@@ -158,7 +158,7 @@ exit
 ```
 
 
-![img11](https://github.com/Sushantdbg/reviveMyUSB/blob/main/screenshots/11.png?raw=true)
+![img11](./screenshots/11.png)
 
 
 ### For a clear look at the whole CMD command as per my PC you can see [HERE 🡭](https://github.com/Sushantdbg/reviveMyUSB/blob/main/myWholeCMDas.txt)
