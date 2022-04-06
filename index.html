@@ -1,0 +1,127 @@
+<html><head><style>body {
+   color: black;
+}
+</style></head><body><p><img src="./Assets/Logo.png" alt="reviveMyUSB Logo" style="width:100%"/></p>
+<p><a href="https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs"><img src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="MIT License"></a></p>
+<p>#</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-this-about-">What is this about?</h3>
+<p>There are situations where after using a USB flash drive as a Linux installation media it couldn&#39;t be brought back to its original state on a Windows PC.</p>
+<p>When one tries to format it using windows GUI/File Manager error like <strong>&quot;DIRECTORY DOES NOT EXIST&quot;</strong> or something like below pops up when trying to format it using <em>Disk Management</em>...</p>
+<p><img src="./Assets/screenshots/00.png" alt="Error image in Disk Management"></p>
+<p>...so this guide/project is all about guiding the steps to make the USB flash drive back to life</p>
+<h3 id="are-there-any-pre-requisites-">Are there any pre-requisites?</h3>
+<ul>
+<li>Corrupted Flash Drive</li>
+<li>Windows PC</li>
+</ul>
+<h3 id="any-specific-question-which-haven-t-been-addressed-yet-or-anything-in-the-same-line-feel-free-to-raise-and-issue-https-github-com-sushantdbg-revivemyusb-issues-new-with-your-query-">Any specific question which haven&#39;t been addressed yet or anything in the same line? Feel free to <strong><a href="https://github.com/Sushantdbg/reviveMyUSB/issues/new">raise and issue</a></strong> with your query.</h3>
+<p>#</p>
+<h2 id="tech-stack">Tech Stack</h2>
+<ul>
+<li><strong>Windows Command Line</strong>
+#</li>
+</ul>
+<h2 id="preface">Preface</h2>
+<p>Please consider the fact that the screenshots corresponding to steps below are <em>just for reference</em> which may/mayn&#39;t reflect same for your pc for example the disk number of flash drive.</p>
+<p>All such factors are addressed on respective steps, as well as will be handled via warnings and explanations.</p>
+<h4 id="before-we-go-ahead-please-consider-the-fact-that-this-project-instructions-is-are-provided-as-is-without-warranty-of-any-kind">BEFORE WE GO AHEAD, PLEASE CONSIDER THE FACT THAT THIS PROJECT/INSTRUCTIONS IS/ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND</h4>
+<p>#</p>
+<h2 id="instructions-starts-here">Instructions starts here</h2>
+<p>Step 1: Start CMD with admin privilege</p>
+<p><img src="./Assets/screenshots/01.png" alt="Starting with admin privilege"></p>
+<p>Step 2:</p>
+<pre><code class="lang-bash"><span class="hljs-attribute">diskpart</span>
+</code></pre>
+<p><img src="./Assets/screenshots/02.png" alt="img02"></p>
+<p>Step 3:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">list</span> disk
+</code></pre>
+<p><img src="./Assets/screenshots/03.png" alt="img03"></p>
+<p>Step 4: <span style="color:red">Please make sure that the flash drive is the only one selected and not any system drive</span></p>
+<p>You can deduce the difference between flash drive and system drive by their respective sizes as shown in the <strong>size column</strong>.</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">select</span> disk &lt;disk <span class="hljs-built_in">number</span> <span class="hljs-keyword">of</span> flash drive&gt;
+</code></pre>
+<p>Step 5: <span style="color:lavender">reassure the selected drive by the<span style="color:red"> <strong>&quot;*&quot;</strong> </span>asterisk sign before respective <strong>Disk ### column</strong></span></p>
+<pre><code class="lang-bash"><span class="hljs-built_in">list</span> disk
+</code></pre>
+<p><img src="./Assets/screenshots/04.png" alt="img04"></p>
+<p>Step 6:</p>
+<pre><code class="lang-bash"><span class="hljs-attribute">clean</span>
+</code></pre>
+<p><img src="./Assets/screenshots/06.png" alt="img06"></p>
+<p><span style="color:green"><strong>Step 7</strong> and <strong>8</strong> are only to be followed when you face the same error as seen in the above screenshot, after the <strong>clean</strong> command from <strong>Step 6</strong>; else <span style="color:yellow">you can skip them</span> to continue from <strong>Step 9</strong></span></p>
+<p>Step 7 <span style="color:yellow">(Optional)</span>:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">convert</span> gpt
+</code></pre>
+<p>Step 8 <span style="color:yellow">(Optional)</span>:</p>
+<pre><code class="lang-bash"><span class="hljs-attribute">clean</span>
+</code></pre>
+<p>Step 9:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">list</span> disk
+</code></pre>
+<p><img src="./Assets/screenshots/09.png" alt="img09"></p>
+<p>Step 10:</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">create</span> <span class="hljs-keyword">partition</span> primary
+</code></pre>
+<p>Step 11:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">list</span> partition
+</code></pre>
+<p>Step 12:</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">select</span> <span class="hljs-keyword">partition</span> &lt;<span class="hljs-built_in">number</span> according <span class="hljs-keyword">to</span> your personal flash drive&gt;
+</code></pre>
+<p>Step 13:</p>
+<pre><code class="lang-bash"><span class="hljs-attribute">active</span>
+</code></pre>
+<p>Step 14:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">format</span> <span class="hljs-built_in">fs</span>=fat32 quick
+</code></pre>
+<p><img src="./Assets/screenshots/10.png" alt="img10"></p>
+<p>Step 15:</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">exit</span>
+</code></pre>
+<p><img src="./Assets/screenshots/11.png" alt="img11"></p>
+<h3 id="for-a-clear-look-at-the-whole-cmd-command-as-per-my-pc-you-can-see-here-https-github-com-sushantdbg-revivemyusb-blob-main-mywholecmdas-txt-">For a clear look at the whole CMD command as per my PC you can see <a href="https://github.com/Sushantdbg/reviveMyUSB/blob/main/myWholeCMDas.txt">HERE 🡭</a></h3>
+<h2 id="after-follewing-the-above-procedure-we-expect-your-file-explorer-to-look-like-below">After follewing the above procedure we expect your file explorer to look like below</h2>
+<p><img src="./Assets/screenshots/p01.png" alt="Flash Drive is back online"></p>
+<h2 id="but-it-look-like-the-below">But it look like the below</h2>
+<p><img src="./Assets/screenshots/p02.png" alt="It&#39;s still not visible"></p>
+<h2 id="don-t-worry-we-got-you-covered-just-follow-the-below-miscellaneous-steps">don&#39;t worry we got you covered just follow the below miscellaneous steps</h2>
+<h3 id="miscellaneous-step-1-search-for">Miscellaneous Step 1: Search for</h3>
+<pre><code class="lang-text"><span class="hljs-keyword">create</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">format</span> hard disk <span class="hljs-keyword">partitions</span>
+</code></pre>
+<p><img src="./Assets/screenshots/p03.png" alt="create and format hard disk partitions"></p>
+<h3 id="miscellaneous-step-2-right-click-on-the-flash-drive-block-and-select-_delete-volume_-later-select-yes-for-the-pop-up">Miscellaneous Step 2: Right click on the flash drive block and select <strong><em>Delete Volume</em></strong>, later select yes for the pop-up</h3>
+<p><img src="./Assets/screenshots/p04.png" alt="flash drive in disk manager">
+<img src="./Assets/screenshots/p05.png" alt="pop-up"></p>
+<h4 id="it-would-then-look-like-below">It would then look like below</h4>
+<p><img src="./Assets/screenshots/p06.png" alt="After deleting volume"></p>
+<h3 id="miscellaneous-step-3-right-click-on-the-flash-drive-block-and-select-_new-simple-volume_-skim-through-popup-with-_next_-">Miscellaneous Step 3: Right click on the flash drive block and select <strong><em>New Simple Volume</em></strong>, skim through popup with <strong><em>Next</em></strong></h3>
+<p><img src="./Assets/screenshots/p07.png" alt="pop-up">
+<img src="./Assets/screenshots/p08.png" alt="pop-up">
+<img src="./Assets/screenshots/p09.png" alt="pop-up">
+<img src="./Assets/screenshots/p10.png" alt="pop-up"></p>
+<h4 id="her-on-format-partition-keep-everything-default-but-you-can-change-_volume-label_-">Her on Format Partition keep everything default but you can change <strong><em>Volume label</em></strong></h4>
+<p><img src="./Assets/screenshots/p11.png" alt="After deleting volume"></p>
+<h4 id="finish-the-procedure-with-the-_finish-button_-">Finish the procedure with the <strong><em>Finish Button</em></strong></h4>
+<p><img src="./Assets/screenshots/p12.png" alt="Finish procedure"></p>
+<h4 id="it-should-at-last-look-this">It should at last look this</h4>
+<p><img src="./Assets/screenshots/p13.png" alt="Yay It&#39;s back">
+<img src="./Assets/screenshots/p14.png" alt="Yay It&#39;s back"></p>
+<h3 id="miscellaneous-step-4-last-but-not-the-least-_always_-eject-your-flash-drive-before-physically-pulling-it-about">Miscellaneous Step 4: Last but not the least <strong><em>always</em></strong> eject your flash drive before physically pulling it about</h3>
+<p><img src="./Assets/screenshots/p15.png" alt="Most Important lmao"></p>
+<h2 id="-contributing-"><strong>Contributing</strong></h2>
+<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+<p>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag &quot;enhancement&quot;.
+Don&#39;t forget to give the project a star! Thanks again!</p>
+<h4 id="1-fork-the-project">1. Fork the Project</h4>
+<h4 id="2-create-your-feature-branch">2. Create your Feature Branch</h4>
+<h4 id="3-commit-your-changes">3. Commit your Changes</h4>
+<h4 id="4-push-to-the-branch">4. Push to the Branch</h4>
+<h4 id="5-open-a-pull-request">5. Open a Pull Request</h4>
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li><a href="https://github.com/Sushantdbg">Sushant Kumar</a></li>
+<li><a href="https://github.com/Pallavikumarimdb">Pallavi Kumari</a></li>
+</ul>
+</body></html>
